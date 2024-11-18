@@ -131,6 +131,7 @@ public class Main {
             currentFileName = filename;
             needsToBeSaved = false;
             System.out.println("List loaded successfully.");
+            viewList(); // Display the list after loading
         } catch (IOException e) {
             System.out.println("Error loading file: " + e.getMessage());
         }
@@ -138,8 +139,8 @@ public class Main {
 
     private static void saveList(Scanner scanner) {
         if (currentFileName == null) {
-            System.out.print("Enter the filename to save as: ");
-            currentFileName = scanner.nextLine();
+            System.out.print("Enter the base filename to save as (it will be saved with .txt extension): ");
+            currentFileName = scanner.nextLine() + ".txt";
         }
         try {
             Files.write(Paths.get(currentFileName), itemList);
