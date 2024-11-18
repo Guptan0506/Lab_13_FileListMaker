@@ -1,0 +1,4 @@
+Desktop
+Mobile
+Laptop
+Tablet
